@@ -11,10 +11,10 @@ import { useGLTF } from "@react-three/drei";
 export default function Model1(props) {
     const { nodes, materials } = useGLTF("/earth.glb");
     return (
-        <group  {...props} dispose={null}>
+        <group {...props} dispose={null}>
             <group
                 scale={0.2}
-                position={[-1, -2, 0]}
+                position={[-1, -1.4, 0]}
                 rotation={[Math.PI / 2, -0.46, Math.PI]}
             >
                 <group rotation={[-Math.PI, 0, 0]}>
