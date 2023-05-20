@@ -7,11 +7,35 @@ Source: https://sketchfab.com/3d-models/earth-globe-98d2b04d46474bafb4250cc75dc5
 Title: Earth Globe 🌍
 */
 import { useGLTF } from "@react-three/drei";
+import { useEffect, useRef } from "react";
 
 export default function Model1(props) {
     const { nodes, materials } = useGLTF("/earth.glb");
+    const modelRef = useRef(null);
+    const previousMouse = useRef({ x: 0, y: 0 });
+
+    useEffect(() => {
+        function handleMouseMove(event) {
+            const currentMouse = { x: event.clientX, y: event.clientY };
+            const deltaMouse = {
+                x: currentMouse.x - previousMouse.current.x,
+                y: currentMouse.y - previousMouse.current.y,
+            };
+
+            modelRef.current.position.x += deltaMouse.x * 0.0005;
+            modelRef.current.position.y -= deltaMouse.y * 0.0005;
+
+            previousMouse.current = currentMouse;
+        }
+
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+        };
+    }, []);
+
     return (
-        <group {...props} dispose={null}>
+        <group ref={modelRef} {...props} dispose={null}>
             <group
                 scale={0.2}
                 position={[-1, -1.4, 0]}

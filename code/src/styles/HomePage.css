@@ -29,6 +29,7 @@ html {
     height: 4rem;
     display: flex;
     border-radius: 15px;
+    border: 1px solid black;
 }
 
 .HomePage__SubTitle__text {
@@ -37,6 +38,7 @@ html {
     align-self: center;
     margin-left: 5%;
     font-weight: 800;
+    border: 0px transparent transparent;
 
 }
 
@@ -48,21 +50,20 @@ html {
     margin-top: 2%;
     font-size: 1.5rem;
     font-weight: 100 !important;
+    opacity: 80%;
+
 }
 
-.HomePage__SubTitle__icon {
-    width: 12%;
-    margin: auto 5%;
-}
 
 .HomePage__logo {
     display: grid;
-    position: absolute;
+
     width: 25%;
     margin-top: 37%;
     margin-left: 13%;
     grid-template-rows: 2;
     grid-template-columns: 2;
+    z-index: 10;
 }
 
 .HomePage__logo__main {
@@ -91,13 +92,126 @@ hr {
     margin-left: 13%;
     margin-top: -4%;
     height: 0px;
+    display: none;
 }
 
 .next {
     background: transparent;
     border: transparent;
-    margin-top: 40%;
     margin-left: 86%;
+    position: sticky;
+    z-index: 10;
+}
+
+.next:hover {
+    cursor: pointer;
+}
+
+.input__Checkbox {
+    display: inline;
+    width: 12%;
+    margin: auto 5%;
+    display: none;
+    margin-left: 8%
+}
+
+.input__Checkbox__Icon {
+    display: inline;
+    width: 12%;
+    margin: auto 5%;
+    margin-left: 8%
+}
 
 
+.input__Checkbox__Icon:hover {
+    cursor: pointer !important;
+}
+
+
+
+.MenuList {
+    display: grid;
+    color: white !important;
+    border: 1px solid black;
+    height: 4rem;
+    position: absolute;
+    width: 100%;
+    animation-name: menu-dropdown;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+ul {
+    text-decoration: none !important;
+}
+
+.MenuList__Country1 {
+    border: 0px transparent transparent;
+    padding: 5px;
+    width: 10%;
+    background-color: white;
+    color: black !important;
+    font-family: 'Ubuntu', monospace;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 550 !important;
+    border-radius: 0px 0px 5px 5px;
+    height: 2rem;
+    /* margin-top: calc(14% + 0.5rem); */
+    margin-left: calc(16%);
+    /* position: absolute; */
+
+}
+
+.MenuList :hover {
+    cursor: pointer;
+}
+
+.checked {
+    display: grid;
+}
+
+@keyframes menu-dropdown {
+    0% {
+        margin-top: calc(14% + 0.15rem);
+        z-index: -1;
+    }
+
+    15% {
+        margin-top: calc(14% + 0.15rem);
+        z-index: -1;
+    }
+
+    30% {
+        margin-top: calc(14% + 0.4rem);
+        z-index: -1;
+    }
+
+    45% {
+        margin-top: 15%;
+        z-index: -1;
+    }
+
+    60% {
+        margin-top: calc(15% + 0.15rem);
+    }
+
+    75% {
+        margin-top: calc(16% + 0.4rem);
+    }
+
+    90% {
+        margin-top: 16%;
+    }
+
+    100% {
+        margin-top: 17%;
+    }
+}
+
+.MenuList__Country1:hover {
+    cursor: pointer;
 }
