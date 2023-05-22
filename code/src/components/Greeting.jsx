@@ -1,14 +1,24 @@
-import '../styles/HomePage.css'
-export default function greeting() {
+import '../styles/HomePage.css';
+import {useState , useEffect} from 'react';
+export default function greeting(props) {
     const options = [  'Namaste,',  'Ni hao,',  'Bonjour,',  'Hello,',  'Guten Tag,',  'Hallo,',  'Hej,',  'Kamusta,']
-    ;
-    let count = 0;
-    let languagesAnimation = function () {
-        document.getElementById("greeting").innerHTML = options[count];
-        count = (count % (options.length - 1)) + 1;
+
+    const { isVisible } = props;
+    const [count,setCount] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((prevCount) => (prevCount + 1) % options.length);
+    }, 1500);
+
+    return () => {
+      clearInterval(interval);
     };
+  }, []);
 
-    let languagesAnimationInterval = setInterval(languagesAnimation, 500);
-
-    return <div className='HomePage__Welcome' id="greeting">hello,</div>;
+  if (isVisible) {
+    return <div className="HomePage__Welcome" id="greeting">{options[count]}</div>;
+  } else {
+    return null;
+  }
 }

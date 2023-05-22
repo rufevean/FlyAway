@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
 import Preloader from "./components/Preloader";
 import { useState, useEffect } from "react";
+import Streamoptions from "./pages/Streamoptionspage";
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -30,9 +31,11 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<HomePage />} />
+                        <Route path="/streamoptions" element={<Streamoptions />} />
                     </Routes>
                 </BrowserRouter>
             )}
+            
         </div>
     );
 }

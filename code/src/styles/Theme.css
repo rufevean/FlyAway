@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu:wght@500&display=swap');
+.Theme{
+    background: none;
+    display: flex;
+    color:white;
+    font-family: 'Ubuntu';  
+    font-weight: 600;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: right;
+    margin-right: 10%;
+    margin-top: 37%;
+    position: absolute;
+    margin-left: 80%;
+    gap: 10px;
+    border: 0px solid transparent;
+
+}
+
+.Theme :hover{
+    cursor: pointer;
+}

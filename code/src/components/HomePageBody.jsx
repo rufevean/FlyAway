@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "../styles/HomePage.css";
 import Menu from "../components/Menu";
 import Dropdown from "../assets/images/Vector.png";
@@ -32,8 +32,8 @@ export default function HomePageBody() {
                     <img src={Dropdown} alt="dropdown"></img>
                 </label>
             </div>
-
-            {showMenu && <Menu />} {/* Render the menu based on showMenu state */}
+            {showMenu && <Menu />}{" "}
+            {/* Render the menu based on showMenu state */}
         </nav>
     );
 }

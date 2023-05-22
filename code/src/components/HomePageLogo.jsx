@@ -7,7 +7,7 @@ export default function HomePageLogo() {
             <NavLink to={"/"} className="HomePage__logo__main">
                 FlyAway
             </NavLink>
-            <hr />
+            <hr /> 
             <div className="HomePage__logo__sub">JOURNEY BEYOND BORDERS</div>
         </div>
     );
