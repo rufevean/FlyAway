@@ -217,3 +217,25 @@ ul {
 .MenuList__Country1:hover {
     cursor: pointer;
 }
+
+#title1{
+    display: none;
+}
+#title2{
+    display: none;
+}
+#title3{
+    display: none;
+}
+#title4{
+    display: none;
+}
+#title5{
+    display: none;
+}
+#title6{
+    display: none;
+}
+#title8{
+    display: none;
+}

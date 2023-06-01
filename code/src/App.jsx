@@ -4,6 +4,7 @@ import "./styles/App.css";
 import Preloader from "./components/Preloader";
 import { useState, useEffect } from "react";
 import Streamoptions from "./pages/Streamoptionspage";
+import DestinationCountry from './pages/DestinationCountry'
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +33,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/streamoptions" element={<Streamoptions />} />
+                        <Route path="/destination" element={<DestinationCountry/>}/>
                     </Routes>
                 </BrowserRouter>
             )}

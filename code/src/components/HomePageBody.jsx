@@ -3,16 +3,17 @@ import "../styles/HomePage.css";
 import Menu from "../components/Menu";
 import Dropdown from "../assets/images/Vector.png";
 
-export default function HomePageBody() {
+export default function HomePageBody(props) {
     const [showMenu, setShowMenu] = useState(false); // State to track menu visibility
+    const { info, home } = props;
 
-    function handleCheckboxChange() {
+    function handleCheckboxChange(props) {
         setShowMenu(!showMenu); // Toggle menu visibility
     }
 
     return (
         <nav className="HomePage__nav">
-            <div className="HomePage__Title">Where are you located?</div>
+            <div className="HomePage__Title">{info}</div>
             <div className="HomePage__SubTitle">
                 <div className="HomePage__SubTitle__text">
                     SELECT YOUR COUNTRY
@@ -32,8 +33,18 @@ export default function HomePageBody() {
                     <img src={Dropdown} alt="dropdown"></img>
                 </label>
             </div>
-            {showMenu && <Menu />}{" "}
-            {/* Render the menu based on showMenu state */}
+            {showMenu && (
+                <Menu
+                    isVisible={!props.flag}
+                    title1={!home ? "Singapore" : null}
+                    title2={!home ? "USA" : null}
+                    title3={!home ? "Canada" : null}
+                    title4={!home ? "UK" : null}
+                    title5={!home ? "Germany" : null}
+                    title6={!home ? "Sweden" : null}
+                    title8={home ? "India" : null}
+                />
+            )}
         </nav>
     );
 }
