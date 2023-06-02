@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import "../styles/HomePage.css";
 import Menu from "../components/Menu";
 import Dropdown from "../assets/images/Vector.png";
+import scrollup from '../assets/images/arrowup.png'
 
 export default function HomePageBody(props) {
     const [showMenu, setShowMenu] = useState(false); // State to track menu visibility
+    const [arrow, setArrow] = useState(false); // State to track arrow visibility
     const { info, home } = props;
-
+    const changearrow = () => {
+        setArrow(!arrow);
+    };
     function handleCheckboxChange(props) {
         setShowMenu(!showMenu); // Toggle menu visibility
     }
@@ -22,6 +26,8 @@ export default function HomePageBody(props) {
                     type="checkbox"
                     name="input__Checkbox"
                     unchecked={true}
+                    checked={arrow} 
+                    onChange={changearrow}
                     id="input__Checkbox"
                     onClick={handleCheckboxChange} // Use the handler function
                     className="input__Checkbox"
@@ -29,8 +35,9 @@ export default function HomePageBody(props) {
                 <label
                     className="input__Checkbox__Icon"
                     htmlFor="input__Checkbox"
+                    
                 >
-                    <img src={Dropdown} alt="dropdown"></img>
+                    <img src={arrow ? scrollup : Dropdown} alt="dropdown"></img>
                 </label>
             </div>
             {showMenu && (

@@ -15,13 +15,6 @@ function App() {
         }, 1000);
     };
 
-    // useEffect(() => {
-    //     // Simulate loading or initialization process
-    //     setTimeout(() => {
-    //         setIsLoading(false);
-    //     }, 2000); // Adjust the delay time (in milliseconds) as needed
-    // }, []);
-
     return (
         <div>
             {isLoading ? (
